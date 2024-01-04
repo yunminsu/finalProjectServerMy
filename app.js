@@ -140,7 +140,7 @@ io.on('connection', (socket) => {
       
     }
     if (data.room) {
-      io.to(data.room).emit('sendMsg', data);
+      io.emit('sendMsg', data);
     } else {
       // 전체메세지로 감
       io.emit('sendMsg', false);
